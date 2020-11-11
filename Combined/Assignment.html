@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Random Grid Number Generator</title>
+        <style>
+            body {
+                margin : 0%;
+                padding: 0%;
+                }
+            .container {
+                display : grid;
+                grid-template-columns: 25% 25% 25% 25%;
+                grid-template-rows: 15% 15% 15%;
+                grid-gap: 50% 1%;
+                margin : 10%;
+                }
+
+            .grid-item {
+                border: 2px solid black;
+                text-align: center;
+                padding : 10%;
+                width : 25%;
+                height: 50%;
+                }
+
+            .number{
+                font-size: xx-large;
+                }       
+        </style>
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="grid-item" id="1"><span class="number">i</span></div>
+            <div class="grid-item" id="2"><span class="number">i</span></div>
+            <div class="grid-item" id="3"><span class="number">i</span></div>
+            <div class="grid-item" id="4"><span class="number">i</span></div>
+            <div class="grid-item" id="5"><span class="number">i</span></div>
+            <div class="grid-item" id="6"><span class="number">i</span></div>
+            <div class="grid-item" id="7"><span class="number">i</span></div>
+            <div class="grid-item" id="8"><span class="number">i</span></div>
+            <div class="grid-item" id="9"><span class="number">i</span></div>
+            <div class="grid-item" id="10"><span class="number">i</span></div>
+            <div class="grid-item" id="11"><span class="number">i</span></div>
+            <div class="grid-item" id="12"><span class="number">i</span></div>
+        </div>
+        <script>
+            var griditem = document.getElementsByClassName("grid-item");
+            var gridnum = document.getElementsByClassName("number");
+
+            function color()
+            {
+                document.getElementById("color").style.backgroundColor = "red";
+
+            }
+            function test()
+            {
+                for(var i=0;i<gridnum.length;i++)
+            {
+                var x = Math.round(Math.random() * 19) + 1;
+                if(x > 10)
+                {
+                    document.getElementById(i + 1).style.backgroundColor = "red";
+                }
+                else
+                {
+                    document.getElementById(i + 1).style.backgroundColor = "white";
+                }
+                    gridnum[i].innerHTML = x;
+            }
+            }
+
+            window.addEventListener("resize", test);
+            test();
+        </script>
+    </body>
+</html>
